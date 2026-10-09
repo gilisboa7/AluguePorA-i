@@ -311,6 +311,65 @@ fieldset{border:0;padding:0;margin:0} legend{font:700 .74rem var(--sans);letter-
 .cal-mo:disabled{color:#CBD6D2;cursor:default}
 .cal-hint{margin:10px 0 0;font-size:.82rem;color:var(--ink2)}
 @media(max-width:640px){.cf-chips{display:grid;grid-template-columns:repeat(3,1fr);width:100%;gap:6px}.cf-chips .chip{padding:8px 6px;font-size:.8rem}}
+
+/* ---------- mídias, prévia e aprovação ---------- */
+.midias{display:grid;gap:12px;border:1.5px dashed var(--line);border-radius:18px;padding:14px;background:#fff}
+.midias.loading{opacity:.7}
+.mlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px}
+.mempty{margin:0}
+.mthumb{position:relative;aspect-ratio:4/5;border-radius:14px;overflow:hidden;background:var(--nevoa)}
+.mthumb img,.mthumb video{width:100%;height:100%;object-fit:cover;display:block}
+.mplay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.mplay .lic{width:34px;height:34px;padding:8px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--noite);fill:var(--noite)}
+.mfile{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:8px;text-align:center}
+.mfile .lic{width:30px;height:30px;color:var(--mata)} .mfile small{font-size:.7rem;word-break:break-all;color:var(--ink2)}
+.mnum{position:absolute;top:6px;left:6px;min-width:22px;height:22px;border-radius:999px;background:var(--noite);color:#fff;font:700 .7rem/22px var(--sans);text-align:center;padding:0 6px}
+.mctl{position:absolute;left:6px;right:6px;bottom:6px;display:flex;justify-content:space-between}
+.mbtn{width:30px;height:30px;border-radius:50%;border:0;background:rgba(255,255,255,.95);color:var(--noite);font:700 1rem/1 var(--sans);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+.mbtn .lic{width:16px;height:16px} .mbtn:disabled{opacity:.35;cursor:default}
+.mup{display:flex;flex-wrap:wrap;align-items:center;gap:10px} .mup .lic{width:18px;height:18px}
+.ig{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;width:100%;max-width:400px;justify-self:center}
+.ig-h{display:flex;align-items:center;gap:10px;padding:12px 14px}
+.ig-h b{font:700 .9rem var(--sans)} .ig-h small{margin-left:auto;color:var(--ink2);font-size:.75rem}
+.ig-av{width:34px;height:34px;border-radius:50%;background:var(--menta);display:flex;align-items:center;justify-content:center;flex:none}
+.ig-av svg{width:20px;height:20px}
+.ig-media{position:relative;aspect-ratio:4/5;background:var(--nevoa)} .ig-media.v{aspect-ratio:9/16;max-height:70vh;margin:0 auto}
+.ig-track{display:flex;width:100%;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none} .ig-track::-webkit-scrollbar{display:none}
+.ig-s{flex:0 0 100%;height:100%;scroll-snap-align:start;display:flex;align-items:center;justify-content:center}
+.ig-s img{width:100%;height:100%;object-fit:cover;display:block}
+.pubview .ig img{max-height:none;border-radius:0}
+.ig-s.vid{background:var(--noite)} .ig-s video{width:100%;height:100%;object-fit:contain;display:block}
+.ig-s.file{flex-direction:column;gap:12px;padding:24px;text-align:center} .ig-s.file .lic{width:48px;height:48px;color:var(--mata)}
+.ig-empty{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px;text-align:center;color:var(--ink2);font-size:.9rem} .ig-empty .lic{width:36px;height:36px;color:var(--turq)}
+.ig-count{position:absolute;top:12px;right:12px;background:rgba(16,48,44,.78);color:#fff;border-radius:999px;padding:4px 10px;font:700 .75rem var(--sans)}
+.ig-arr{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;border:0;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--noite)}
+.ig-arr .lic{width:18px;height:18px} .ig-arr.l{left:10px} .ig-arr.r{right:10px} .ig-arr[hidden]{display:none}
+.ig-dots{display:flex;justify-content:center;gap:5px;padding:10px 0 0} .ig-dots i{width:6px;height:6px;border-radius:50%;background:var(--line)} .ig-dots i.on{background:var(--turq)}
+.ig-cap{margin:0;padding:10px 14px 16px;font-size:.9rem;line-height:1.5;white-space:pre-line;text-align:left}
+.pubview{display:grid;gap:22px;align-items:start}
+@media(min-width:820px){.pubview{grid-template-columns:minmax(0,400px) minmax(0,1fr)}}
+.pv-acts{display:flex;flex-wrap:wrap;gap:10px}
+.pub-badges{display:flex;flex-wrap:wrap;gap:6px}
+.pub-img{overflow:hidden} .pub-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pub-n{position:absolute;top:10px;right:10px;display:flex;align-items:center;gap:4px;background:rgba(16,48,44,.78);color:#fff;border-radius:999px;padding:4px 9px;font:700 .72rem var(--sans)}
+.pub-n .lic{width:14px;height:14px;color:#fff}
+.pub-img .tipo{z-index:1}
+.badge.ap-wait{background:#FFF1D2;color:#7A5300} .badge.ap-ok{background:#DDF4E6;color:#0F5F57} .badge.ap-fix{background:#FDE3DE;color:#9A3324}
+.ap-fix-t{color:#9A3324}
+.ap-box{width:100%;box-sizing:border-box;display:grid;gap:10px;border-radius:18px;padding:16px 18px;background:var(--nevoa);text-align:left}
+.ap-box.ap-wait{background:#FFF7E6;border:1.5px solid #F2D9A0} .ap-box.ap-ok{background:#EAF7EF;border:1.5px solid #BFE6CC} .ap-box.ap-fix{background:#FDF0ED;border:1.5px solid #F2C6BD}
+.ap-act{display:flex;flex-wrap:wrap;gap:10px} .ap-act .lic{width:18px;height:18px}
+.ap-form{display:grid;gap:8px} .ap-form[hidden]{display:none} .ap-form label{font-weight:600;font-size:.9rem}
+.ap-form textarea{width:100%;box-sizing:border-box;border:1.5px solid var(--line);border-radius:14px;padding:10px 12px;font:inherit;resize:vertical}
+.ap-q{margin:0;padding:10px 14px;border-radius:12px;background:#fff;font-size:.9rem;white-space:pre-line}
+.link-btn{justify-self:start;background:none;border:0;padding:4px 0;color:var(--mata);font:600 .85rem var(--sans);cursor:pointer;text-decoration:underline}
+.link-btn[hidden],[data-apacts][hidden]{display:none}
+.ap-alert{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--noite);border:1.5px solid #F2D9A0;background:#FFF7E6;padding:16px 18px;text-align:left}
+.ap-alert b{display:block} .ap-alert small{color:var(--ink2)}
+.ap-ic{width:42px;height:42px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex:none} .ap-ic .lic{width:20px;height:20px;color:#7A5300}
+.ap-go{margin-left:auto} .ap-go .lic{width:20px;height:20px}
+.ap-panel{border:1.5px solid #F2D9A0;background:#FFFBF1;margin-bottom:18px}
+.ap-panel h3{margin:4px 0 14px}
 </style>
 </head>
 <body>
@@ -393,6 +452,13 @@ window.SEED_IMG={"paradiso": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD
     onda: '<path d="M3 10c2-1.6 4-1.6 6 0s4 1.6 6 0 4-1.6 6 0M3 15c2-1.6 4-1.6 6 0s4 1.6 6 0 4-1.6 6 0"/>',
     check: '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
     calendario: '<rect x="4" y="5" width="16" height="15" rx="2.5"/><path d="M4 10h16M9 3v4M15 3v4"/>',
+    play: '<path d="M8 5.5v13l11-6.5z"/>',
+    camadas: '<rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M4 15.5V6.5A2.5 2.5 0 0 1 6.5 4H15.5"/>',
+    arquivo: '<path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/>',
+    lapis: '<path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16z"/><path d="M13.5 6.5l4 4"/>',
+    seta_e: '<path d="M15 6l-6 6 6 6"/>',
+    seta_d: '<path d="M9 6l6 6-6 6"/>',
+    upload: '<path d="M12 16V4M7 9l5-5 5 5"/><path d="M5 15v4h14v-4"/>',
   };
   U.ic = (k, cls = "") => `<svg class="lic ${cls}" viewBox="0 0 24 24" aria-hidden="true">${IC[k] || ""}</svg>`;
   const MESES = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
@@ -508,6 +574,17 @@ window.SEED_IMG={"paradiso": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD
         save();
       },
       async upload(file) { guard(); return await compressImage(file, 900); },
+      async uploadMidia(file) {
+        guard(); const tipo = tipoArquivo(file); checkSize(file);
+        if (tipo === "imagem") return { url: await compressImage(file, 1200), tipo, nome: file.name };
+        return { url: URL.createObjectURL(file), tipo, nome: file.name, temporario: true }; // demonstração: vale só nesta sessão
+      },
+      async aprovar(id, status, comentario) {
+        if (!user) throw new Error("Faça login.");
+        const p = mem.publicacoes.find((r) => r.id === id); if (!p || !p.aprovacao) throw new Error("Conteúdo não encontrado.");
+        if (status === "Ajuste solicitado" && !String(comentario || "").trim()) throw new Error("Conte o que você quer mudar.");
+        Object.assign(p, { aprovacao: status, aprovacao_comentario: status === "Aprovado" ? null : comentario, aprovacao_em: new Date().toISOString() }); save();
+      },
       async reset() { guard(); mem = seed(); save(); },
       exportAll() { return JSON.parse(JSON.stringify(mem)); },
     };
@@ -542,11 +619,25 @@ window.SEED_IMG={"paradiso": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD
         chk(await sb.storage.from("midias").upload(path, blob, { contentType: "image/jpeg" }));
         return sb.storage.from("midias").getPublicUrl(path).data.publicUrl;
       },
+      async uploadMidia(file) {
+        const tipo = tipoArquivo(file); checkSize(file);
+        let blob = file, ext = (file.name.split(".").pop() || "bin").toLowerCase().replace(/[^a-z0-9]/g, ""), ct = file.type || "application/octet-stream";
+        if (tipo === "imagem" && !/gif|svg/.test(file.type)) { blob = await (await fetch(await compressImage(file, 1800))).blob(); ext = "jpg"; ct = "image/jpeg"; }
+        const path = `conteudo/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext || "bin"}`;
+        chk(await sb.storage.from("midias").upload(path, blob, { contentType: ct }));
+        return { url: sb.storage.from("midias").getPublicUrl(path).data.publicUrl, tipo, nome: file.name };
+      },
+      async aprovar(id, status, comentario) {
+        chk(await sb.rpc("responder_aprovacao", { p_id: id, p_status: status, p_comentario: comentario || null }));
+      },
       async reset() { throw new Error("Disponível só no modo demonstração."); },
       exportAll: null,
     };
   }
 
+  const LIMITE_MB = 50; // limite por arquivo do plano gratuito do Supabase
+  function tipoArquivo(file) { const t = file.type || ""; if (t.startsWith("image/")) return "imagem"; if (t.startsWith("video/") || /\.(mp4|mov|m4v|webm)$/i.test(file.name)) return "video"; return "arquivo"; }
+  function checkSize(file) { const mb = file.size / 1048576; if (mb > LIMITE_MB) throw new Error(`"${file.name}" tem ${mb.toFixed(0)} MB. O limite é ${LIMITE_MB} MB por arquivo: comprima o vídeo ou cole o link do Drive no campo Link.`); }
   function compressImage(file, max) {
     return new Promise((res, rej) => {
       const fr = new FileReader();
@@ -560,7 +651,7 @@ window.SEED_IMG={"paradiso": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD
   const offlineAdapter = () => {
     const msg = "Não foi possível carregar o sistema de login. Verifique a internet e recarregue a página.";
     const no = async () => { throw new Error(msg); };
-    return { mode: "supabase", signIn: no, signOut: async () => {}, currentUser: async () => null, list: no, insert: no, update: no, remove: no, upload: no, reset: no, exportAll: null };
+    return { mode: "supabase", signIn: no, signOut: async () => {}, currentUser: async () => null, list: no, insert: no, update: no, remove: no, upload: no, uploadMidia: no, aprovar: no, reset: no, exportAll: null };
   };
   let API;
   try { API = USE_SUPABASE ? (window.supabase ? supabaseAdapter() : offlineAdapter()) : demoAdapter(); }
@@ -644,8 +735,50 @@ window.SEED_IMG={"paradiso": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD
     else if (f.type === "textarea") inp = `<textarea id="${id}" name="${f.k}" rows="${f.rows || 3}" ${req}>${U.esc(val)}</textarea>`;
     else if (f.type === "bool") inp = `<label class="switch"><input type="checkbox" id="${id}" name="${f.k}" ${val ? "checked" : ""}><span></span>${U.esc(f.hint || "")}</label>`;
     else if (f.type === "image") inp = `<div class="imgfield"><div class="imgprev" style="${val ? `background-image:url('${U.esc(val)}')` : ""}"></div><div><input type="hidden" name="${f.k}" value="${U.esc(val)}"><label class="btn ghost sm">Enviar imagem<input type="file" accept="image/*" hidden data-up="${f.k}"></label><input type="url" placeholder="ou cole o link da imagem" data-url="${f.k}" value="${val && !String(val).startsWith("data:") ? U.esc(val) : ""}"></div></div>`;
+    else if (f.type === "midias") { let arr = []; try { arr = Array.isArray(val) ? val : JSON.parse(val || "[]"); } catch (e) {} inp = `<div class="midias" data-midias="${f.k}"><input type="hidden" name="${f.k}" value="${U.esc(JSON.stringify(arr))}"><div class="mlist" data-mlist>${mThumbs(arr)}</div><div class="mup"><label class="btn ghost sm">${U.ic("upload")}<span data-mlabel>Adicionar arquivos</span><input type="file" multiple hidden data-mfile></label><small class="muted" data-mhint></small></div></div>`; }
     else inp = `<input id="${id}" name="${f.k}" type="${f.type || "text"}" ${f.step ? `step="${f.step}"` : ""} ${f.min !== undefined ? `min="${f.min}"` : ""} value="${U.esc(val)}" ${req} placeholder="${U.esc(f.ph || "")}">`;
     return `<div class="fld ${f.full ? "full" : ""} ${f.type === "bool" ? "full" : ""}"><label for="${id}">${U.esc(f.label)}${f.req ? " *" : ""}</label>${inp}${f.help ? `<small>${U.esc(f.help)}</small>` : ""}</div>`;
+  }
+  function mThumbs(arr) {
+    if (!arr.length) return `<p class="mempty muted small">Nenhuma mídia ainda.</p>`;
+    return arr.map((m, i) => `<div class="mthumb">
+      ${m.tipo === "imagem" ? `<img src="${U.esc(m.url)}" alt="">` : m.tipo === "video" ? `<video src="${U.esc(m.url)}#t=0.5" muted playsinline preload="metadata"></video><span class="mplay">${U.ic("play")}</span>` : `<span class="mfile">${U.ic("arquivo")}<small>${U.esc(m.nome || "arquivo")}</small></span>`}
+      <span class="mnum">${i + 1}</span>
+      <div class="mctl"><button type="button" class="mbtn" data-mleft="${i}" aria-label="Mover para a esquerda" ${i === 0 ? "disabled" : ""}>${U.ic("seta_e")}</button><button type="button" class="mbtn" data-mdel="${i}" aria-label="Remover">×</button><button type="button" class="mbtn" data-mright="${i}" aria-label="Mover para a direita" ${i === arr.length - 1 ? "disabled" : ""}>${U.ic("seta_d")}</button></div>
+    </div>`).join("");
+  }
+  const MIDIA_TIPO = {
+    Carrossel: { accept: "image/*", label: "Adicionar imagens", hint: "Selecione várias de uma vez, na ordem do carrossel. Use as setas para reordenar." },
+    Reels: { accept: "", label: "Adicionar vídeo ou arquivo", hint: "Vídeo de até 50 MB. Arquivo maior? Cole o link do Drive no campo Link." },
+    Stories: { accept: "image/*,video/*", label: "Adicionar imagens ou vídeos", hint: "Uma mídia por story, na ordem em que vão ao ar." },
+    Post: { accept: "image/*", label: "Adicionar imagem", hint: "A imagem do post." },
+    Outro: { accept: "", label: "Adicionar arquivos", hint: "Imagens, vídeos ou outros arquivos." },
+  };
+  function bindMidias(fm) {
+    U.$$("[data-midias]", fm).forEach((box) => {
+      const hid = U.$("input[type=hidden]", box), list = U.$("[data-mlist]", box), file = U.$("[data-mfile]", box), lab = U.$("[data-mlabel]", box), hint = U.$("[data-mhint]", box);
+      let arr = []; try { arr = JSON.parse(hid.value || "[]"); } catch (e) {}
+      const draw = () => { hid.value = JSON.stringify(arr); list.innerHTML = mThumbs(arr); };
+      const sync = () => { const t = MIDIA_TIPO[(fm.elements.tipo || {}).value] || MIDIA_TIPO.Outro; file.accept = t.accept; lab.textContent = t.label; hint.textContent = t.hint; };
+      sync(); if (fm.elements.tipo) fm.elements.tipo.addEventListener("change", sync);
+      list.addEventListener("click", (e) => {
+        const b = e.target.closest("button"); if (!b) return;
+        if (b.dataset.mdel !== undefined) arr.splice(+b.dataset.mdel, 1);
+        else if (b.dataset.mleft !== undefined) { const i = +b.dataset.mleft; [arr[i - 1], arr[i]] = [arr[i], arr[i - 1]]; }
+        else if (b.dataset.mright !== undefined) { const i = +b.dataset.mright; [arr[i + 1], arr[i]] = [arr[i], arr[i + 1]]; }
+        draw();
+      });
+      file.addEventListener("change", async () => {
+        const fs = Array.from(file.files || []); file.value = ""; if (!fs.length) return;
+        const sub = fm.querySelector("button[type=submit]"); sub.disabled = true; box.classList.add("loading");
+        for (let i = 0; i < fs.length; i++) {
+          lab.textContent = `Enviando ${i + 1} de ${fs.length}…`;
+          try { const m = await API.uploadMidia(fs[i]); arr.push(m); draw(); if (m.temporario) toast("No modo demonstração, vídeos e arquivos ficam só até recarregar a página."); }
+          catch (err) { toast(err.message, "err"); }
+        }
+        sub.disabled = false; box.classList.remove("loading"); sync();
+      });
+    });
   }
   function form({ title, sub, groups, values = {}, onSave, onDelete, saveLabel = "Salvar" }) {
     const html = `<form class="form" novalidate><h2>${U.esc(title)}</h2>${sub ? `<p class="muted">${U.esc(sub)}</p>` : ""}
@@ -658,6 +791,7 @@ window.SEED_IMG={"paradiso": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD
       try { const url = await API.upload(f); fm.elements[k].value = url; prev.style.backgroundImage = `url('${url}')`; } catch (e) { toast(e.message, "err"); }
       prev.classList.remove("loading");
     }));
+    bindMidias(fm);
     U.$$("[data-url]", fm).forEach((inp) => inp.addEventListener("change", () => { const k = inp.dataset.url; fm.elements[k].value = inp.value; inp.closest(".imgfield").querySelector(".imgprev").style.backgroundImage = inp.value ? `url('${inp.value}')` : ""; }));
     fm.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -665,7 +799,12 @@ window.SEED_IMG={"paradiso": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD
       groups.flatMap((g) => g.fields).forEach((f) => {
         const el = fm.elements[f.k]; if (!el) return;
         let v = f.type === "bool" ? el.checked : el.value.trim();
-        if (f.type === "number") v = v === "" ? null : +v;
+        if (f.type === "midias") { try { v = JSON.parse(v || "[]"); } catch (e) { v = []; } }
+        if (f.type === "number") {
+          if (v === "") v = null;
+          else if (!f.step) { v = parseInt(v.replace(/[^\d-]/g, ""), 10); if (isNaN(v)) v = null; } // inteiros: ignora pontos de milhar (1.452 → 1452)
+          else { v = Number(v.replace(",", ".")); if (isNaN(v)) v = null; }
+        }
         if (f.req && (v === "" || v === null)) bad = bad || f.label;
         if (f.type === "select" && v === "") v = null;
         out[f.k] = v;
@@ -681,7 +820,39 @@ window.SEED_IMG={"paradiso": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD
     U.$("[data-ok]", m).addEventListener("click", async () => { try { await onOk(); closeModal(); } catch (e) { toast(e.message, "err"); } });
   }
 
-  window.APA = { U, API, Store, Charts, toast, modal, closeModal, form, confirmBox, animateNumbers, USE_SUPABASE };
+  function mediaOf(p) {
+    let a = []; try { a = Array.isArray(p.midias) ? p.midias : JSON.parse(p.midias || "[]"); } catch (e) {}
+    if (!a.length && p.imagem) a = [{ url: p.imagem, tipo: "imagem" }];
+    return a.filter((m) => m && m.url);
+  }
+  function capaOf(p) { if (p.imagem) return p.imagem; const i = mediaOf(p).find((m) => m.tipo === "imagem"); return i ? i.url : ""; }
+  const SELO_SVG = `<svg viewBox="0 0 64 64" fill="none"><path d="M8 30L32 10l24 20v26H8z" stroke="#fff" stroke-width="4" stroke-linejoin="round"/><path d="M21 41l11-9 11 9v14H21z" fill="#fff"/></svg>`;
+  function preview(p) {
+    const ms = mediaOf(p), vert = /Reels|Stories/.test(p.tipo || "") || (ms.length === 1 && ms[0].tipo === "video");
+    const slide = (m) => m.tipo === "imagem" ? `<div class="ig-s"><img src="${U.esc(m.url)}" alt="" loading="lazy"></div>`
+      : m.tipo === "video" ? `<div class="ig-s vid"><video src="${U.esc(m.url)}" controls playsinline preload="metadata" ${p.imagem ? `poster="${U.esc(p.imagem)}"` : ""}></video></div>`
+      : `<div class="ig-s file"><span>${U.ic("arquivo")}</span><b>${U.esc(m.nome || "Arquivo")}</b><a class="btn ghost sm" href="${U.esc(m.url)}" target="_blank" rel="noopener" download>Abrir arquivo</a></div>`;
+    const media = !ms.length ? `<div class="ig-media ${vert ? "v" : ""}"><div class="ig-empty">${U.ic("camadas")}<span>A prévia aparece aqui quando as mídias forem enviadas.</span></div></div>`
+      : `<div class="ig-media ${vert ? "v" : ""}" data-ig><div class="ig-track" data-track>${ms.map(slide).join("")}</div>
+        ${ms.length > 1 ? `<span class="ig-count" data-count-pv>1/${ms.length}</span><button type="button" class="ig-arr l" data-igl aria-label="Anterior" hidden>${U.ic("seta_e")}</button><button type="button" class="ig-arr r" data-igr aria-label="Próxima">${U.ic("seta_d")}</button>` : ""}</div>
+        ${ms.length > 1 ? `<div class="ig-dots">${ms.map((m, i) => `<i class="${i === 0 ? "on" : ""}"></i>`).join("")}</div>` : ""}`;
+    return `<div class="ig"><div class="ig-h"><span class="ig-av">${SELO_SVG}</span><b>alugueporai</b><small>${U.esc(p.tipo || "")}</small></div>${media}
+      ${p.legenda ? `<p class="ig-cap"><b>alugueporai</b> ${U.esc(p.legenda)}</p>` : `<p class="ig-cap muted">Sem legenda ainda.</p>`}</div>`;
+  }
+  function bindPreview(root) {
+    U.$$("[data-ig]", root).forEach((box) => {
+      const tr = U.$("[data-track]", box), n = tr.children.length; if (n < 2) return;
+      const cnt = U.$("[data-count-pv]", box), l = U.$("[data-igl]", box), r = U.$("[data-igr]", box), dots = U.$$(".ig-dots i", box.parentNode);
+      const upd = () => { const i = Math.round(tr.scrollLeft / tr.clientWidth); cnt.textContent = `${i + 1}/${n}`; dots.forEach((d, k) => d.classList.toggle("on", k === i)); l.hidden = i === 0; r.hidden = i === n - 1; U.$$("video", tr).forEach((v, k) => { if (!v.paused) v.pause(); }); };
+      tr.addEventListener("scroll", () => { clearTimeout(tr._t); tr._t = setTimeout(upd, 80); });
+      l.addEventListener("click", () => tr.scrollBy({ left: -tr.clientWidth, behavior: "smooth" }));
+      r.addEventListener("click", () => tr.scrollBy({ left: tr.clientWidth, behavior: "smooth" }));
+    });
+  }
+  const AP = { "Aguardando aprovação": ["ap-wait", "Aguardando aprovação"], "Aprovado": ["ap-ok", "Aprovado"], "Ajuste solicitado": ["ap-fix", "Ajuste pedido"] };
+  const apBadge = (s) => (AP[s] ? `<span class="badge ${AP[s][0]}">${AP[s][1]}</span>` : "");
+
+  window.APA = { U, API, Store, Charts, toast, modal, closeModal, form, confirmBox, animateNumbers, USE_SUPABASE, preview, bindPreview, mediaOf, capaOf, apBadge };
 })();
 </script>
 <script>
@@ -826,7 +997,8 @@ window.SEED_IMG={"paradiso": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD
     ],
     semanas: () => [{ fields: [{ k: "numero", label: "Número da semana", type: "number" }, { k: "status", label: "Status", type: "select", opts: ["Planejamento", "Em andamento", "Concluída"] }, { k: "inicio", label: "Data inicial", type: "date", req: true }, { k: "fim", label: "Data final", type: "date", req: true }, { k: "observacoes", label: "Observações", type: "textarea", full: true }] }],
     publicacoes: () => [
-      { title: "Conteúdo", fields: [{ k: "semana_id", label: "Semana", type: "select", opts: Store.data.semanas.slice().sort((a, b) => (a.inicio < b.inicio ? -1 : 1)).map((s) => [s.id, `Semana ${String(s.numero || "").padStart(2, "0")} · ${U.range(s.inicio, s.fim)}`]), req: true }, { k: "status", label: "Status", type: "select", opts: Object.keys(M.STATUS) }, { k: "data", label: "Data", type: "date" }, { k: "horario", label: "Horário", type: "time" }, { k: "tipo", label: "Tipo", type: "select", opts: M.TIPOS }, { k: "imovel_id", label: "Imóvel relacionado", type: "select", opts: imovelOpts() }, { k: "titulo", label: "Título", req: true, full: true }, { k: "tema", label: "Tema" }, { k: "link", label: "Link", type: "url", ph: "https://instagram.com/p/…" }, { k: "imagem", label: "Imagem / capa", type: "image", full: true }, { k: "legenda", label: "Legenda", type: "textarea", rows: 4, full: true }, { k: "observacoes", label: "Observações", type: "textarea", full: true }] },
+      { title: "Conteúdo", fields: [{ k: "semana_id", label: "Semana", type: "select", opts: Store.data.semanas.slice().sort((a, b) => (a.inicio < b.inicio ? -1 : 1)).map((s) => [s.id, `Semana ${String(s.numero || "").padStart(2, "0")} · ${U.range(s.inicio, s.fim)}`]), req: true }, { k: "status", label: "Status", type: "select", opts: Object.keys(M.STATUS) }, { k: "data", label: "Data", type: "date" }, { k: "horario", label: "Horário", type: "time" }, { k: "tipo", label: "Tipo", type: "select", opts: M.TIPOS }, { k: "imovel_id", label: "Imóvel relacionado", type: "select", opts: imovelOpts() }, { k: "titulo", label: "Título", req: true, full: true }, { k: "tema", label: "Tema" }, { k: "link", label: "Link", type: "url", ph: "https://instagram.com/p/… ou link do Drive" }, { k: "midias", label: "Mídias do conteúdo", type: "midias", full: true }, { k: "imagem", label: "Capa (opcional)", type: "image", full: true, help: "Se ficar vazia, usamos a primeira imagem. Em Reels, é a capa do vídeo." }, { k: "legenda", label: "Legenda", type: "textarea", rows: 4, full: true }, { k: "observacoes", label: "Observações internas", type: "textarea", full: true }] },
+      { title: "Aprovação da cliente", fields: [{ k: "aprovacao", label: "Situação", type: "select", opts: [["", "Não enviado para aprovação"], "Aguardando aprovação", "Aprovado", "Ajuste solicitado"], help: "Escolha “Aguardando aprovação” para a cliente aprovar. Depois de fazer um ajuste, volte para essa opção." }, { k: "aprovacao_comentario", label: "Pedido de ajuste da cliente", type: "textarea", full: true, help: "Preenchido pela cliente quando ela pede ajuste." }] },
       { title: "Resultados (depois de publicado)", fields: [["alcance", "Alcance"], ["impressoes", "Impressões"], ["curtidas", "Curtidas"], ["comentarios", "Comentários"], ["compartilhamentos", "Compartilhamentos"], ["salvamentos", "Salvamentos"], ["visitas_perfil", "Visitas ao perfil"], ["cliques", "Cliques"], ["novos_seguidores", "Novos seguidores gerados"]].map(([k, label]) => ({ k, label, type: "number" })).concat([{ k: "obs_resultados", label: "Observações sobre o resultado", type: "textarea", full: true }]) },
     ],
     campanhas: () => [
@@ -939,7 +1111,8 @@ window.SEED_IMG={"paradiso": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD
     if (!openWeek && cur) openWeek = cur.id;
     const last = sems[0]; const nextIni = last ? U.iso(U.addDays(U.d(last.fim), 1)) : U.iso(U.addDays(U.today(), -((U.today().getDay() + 6) % 7)));
     const def = { numero: (Math.max(0, ...sems.map((s) => n(s.numero))) || 0) + 1, inicio: nextIni, fim: U.iso(U.addDays(U.d(nextIni), 6)), status: "Planejamento" };
-    return head("Conteúdo", "Planejamento por semanas independentes. Datas podem mudar sem bagunçar o resto.", `<button class="btn primary" data-new="semanas" data-def='${JSON.stringify(def)}'>+ Nova semana</button>`) +
+    const apW = Store.data.publicacoes.filter((p) => p.aprovacao === "Aguardando aprovação").length, apF = Store.data.publicacoes.filter((p) => p.aprovacao === "Ajuste solicitado").length;
+    return head("Conteúdo", `Planejamento por semanas independentes.${apW ? ` · <b>${apW}</b> aguardando aprovação` : ""}${apF ? ` · <b class="ap-fix-t">${apF}</b> com ajuste pedido` : ""}`, `<button class="btn primary" data-new="semanas" data-def='${JSON.stringify(def)}'>+ Nova semana</button>`) +
       `<div class="weeks">${sems.map((w) => weekCard(w, cur)).join("") || "<div class='card empty'>Crie a primeira semana.</div>"}</div>`;
   }
   function weekCard(w, cur) {
@@ -956,14 +1129,18 @@ window.SEED_IMG={"paradiso": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD
   }
   function pubCard(p, admin) {
     const vs = M.vsType(p, Store.data.publicacoes);
-    return `<button class="pub" ${admin ? `data-edit="publicacoes:${p.id}"` : `data-view="${p.id}"`}>
-      <div class="pub-img" style="${p.imagem ? `background-image:url('${esc(p.imagem)}')` : ""}"><span class="tipo">${esc(p.tipo || "")}</span></div>
+    const ms = window.APA.mediaOf(p), capa = window.APA.capaOf(p), vid = !capa && ms.find((m) => m.tipo === "video");
+    return `<button class="pub" ${admin ? `data-pv="${p.id}"` : `data-view="${p.id}"`}>
+      <div class="pub-img" style="${capa ? `background-image:url('${esc(capa)}')` : ""}">${vid ? `<video class="pub-vid" src="${esc(vid.url)}#t=0.5" muted playsinline preload="metadata"></video>` : ""}<span class="tipo">${esc(p.tipo || "")}</span>${ms.length > 1 ? `<span class="pub-n">${U.ic("camadas")}${ms.length}</span>` : ms.length === 1 && ms[0].tipo === "video" ? `<span class="pub-n">${U.ic("play")}</span>` : ""}</div>
       <div class="pub-b"><small>${U.weekday(p.data)} ${U.dShort(p.data)}${p.horario ? " · " + esc(p.horario) : ""}</small><b>${esc(p.titulo)}</b>
-      ${imName(p.imovel_id) ? `<small class="muted">${esc(imName(p.imovel_id))}</small>` : ""}${stBadge(p.status)}
+      ${imName(p.imovel_id) ? `<small class="muted">${esc(imName(p.imovel_id))}</small>` : ""}<span class="pub-badges">${stBadge(p.status)}${window.APA.apBadge(p.aprovacao)}</span>
       ${M.hasResults(p) ? `<div class="pub-r"><span>${U.ic("olho")}${U.fmt(p.alcance)}</span><span>${U.ic("coracao")}${U.fmt(p.curtidas)}</span>${vs !== null ? `<em class="${vs >= 0 ? "up" : "down"}">${U.sign(vs, 0)} vs. ${esc(p.tipo)}</em>` : ""}</div>` : ""}</div></button>`;
   }
   window.APA.pubCard = pubCard;
-  function bindConteudo(root) { U.$$("[data-toggle]", root).forEach((h) => h.addEventListener("click", () => { openWeek = openWeek === h.dataset.toggle ? null : h.dataset.toggle; window.APP.render(); })); }
+  function bindConteudo(root) {
+    U.$$("[data-toggle]", root).forEach((h) => h.addEventListener("click", () => { openWeek = openWeek === h.dataset.toggle ? null : h.dataset.toggle; window.APP.render(); }));
+    U.$$("[data-pv]", root).forEach((b) => b.addEventListener("click", () => window.APA.viewPub(b.dataset.pv, { admin: true })));
+  }
 
   /* ---------- TRÁFEGO ---------- */
   function trafego() {
@@ -1240,7 +1417,9 @@ window.SEED_IMG={"paradiso": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD
     const cA = M.campWindow(D.campanhas, wa, wb);
     const ok = A.count && B.count;
     const pAlc = ok ? U.pct(A.alcance, B.alcance) : null, pEng = ok ? U.pct(A.eng, B.eng) : null, pSeg = ok ? U.pct(A.seguidores, B.seguidores) : null;
+    const nPend = D.publicacoes.filter((p) => p.aprovacao === "Aguardando aprovação").length;
     return `<header class="hello"><h1>Olá, ${esc(user.nome || "Alugue por Aí")}!</h1><p>${U.ic("onda", "hello-ic")}Veja como sua marca está crescendo.</p></header>
+    ${nPend ? `<a class="card ap-alert" href="#/cliente/conteudos"><span class="ap-ic">${U.ic("check")}</span><span><b>${nPend} conteúdo${nPend === 1 ? "" : "s"} para aprovar</b><small>Toque para ver a prévia e responder.</small></span><span class="ap-go">${U.ic("seta_d")}</span></a>` : ""}
     ${F.html()}
     <section class="card hero-card"><span class="eyebrow">${esc(F.label())}</span>
       ${A.count ? `<div class="hero-grid">
@@ -1289,19 +1468,48 @@ window.SEED_IMG={"paradiso": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD
     const sems = D.semanas.slice().sort((a, b) => (a.inicio < b.inicio ? 1 : -1)).filter((w) => w.fim >= wa && (preset || w.inicio <= wb));
     const pubsW = D.publicacoes.filter(inWin), pub = pubsW.filter((p) => p.status === "Publicado").length, best = M.best(pubsW);
     const blocks = sems.map((w) => { const pubs = D.publicacoes.filter((p) => p.semana_id === w.id && inWin(p)).sort((a, b) => (a.data < b.data ? -1 : 1)); return `<section class="week card ${cur && cur.id === w.id ? "current" : ""} open"><header class="week-h"><div><span class="eyebrow">${cur && cur.id === w.id ? "Semana atual" : "Semana " + String(w.numero || "").padStart(2, "0")}</span><h3>${U.range(w.inicio, w.fim)}</h3></div><div class="week-meta"><span class="muted">${pubs.length} conteúdo${pubs.length === 1 ? "" : "s"}</span></div></header><div class="week-body"><div class="pubs">${pubs.map((p) => window.APA.pubCard(p, false)).join("") || "<p class='muted'>Nada nesse período.</p>"}</div></div></section>`; }).join("");
-    return `<header class="page-h"><div><h1>Seus conteúdos</h1><p class="muted">${pub} conteúdo${pub === 1 ? "" : "s"} publicado${pub === 1 ? "" : "s"} no período${best ? ` · destaque: <b>${esc(best.titulo)}</b>` : ""}</p></div></header>
+    const pend = D.publicacoes.filter((p) => p.aprovacao === "Aguardando aprovação").sort((a, b) => ((a.data || "") < (b.data || "") ? -1 : 1));
+    const pendBlock = pend.length ? `<section class="card ap-panel"><span class="eyebrow">Para aprovar</span><h3>${pend.length} conteúdo${pend.length === 1 ? "" : "s"} esperando a sua aprovação</h3><div class="pubs">${pend.map((p) => window.APA.pubCard(p, false)).join("")}</div></section>` : "";
+    return `${pendBlock}<header class="page-h"><div><h1>Seus conteúdos</h1><p class="muted">${pub} conteúdo${pub === 1 ? "" : "s"} publicado${pub === 1 ? "" : "s"} no período${best ? ` · destaque: <b>${esc(best.titulo)}</b>` : ""}</p></div></header>
     ${F.html()}
     ${preset ? `<p class="muted small cf-note">Incluímos também os conteúdos já planejados para os próximos dias.</p>` : ""}
     <div class="legend-st">${Object.entries(M.STATUS).map(([s, c]) => `<span><i class="${c}"></i>${s}</span>`).join("")}</div>
     ${blocks || `<div class="card empty">Nenhum conteúdo nesse período.</div>`}`;
   }
-  function viewPub(id) {
+  function apBlock(p, admin) {
+    const st = p.aprovacao; if (!st) return admin ? `<div class="ap-box none"><b>Não enviado para aprovação</b><p class="muted small">Edite e escolha “Aguardando aprovação” para a cliente ver este conteúdo com os botões de aprovar.</p></div>` : "";
+    const quando = p.aprovacao_em ? ` em ${U.dShort(String(p.aprovacao_em).slice(0, 10))}` : "";
+    const com = p.aprovacao_comentario ? `<blockquote class="ap-q">${esc(p.aprovacao_comentario)}</blockquote>` : "";
+    if (admin) return `<div class="ap-box ${(AP_CLS[st] || "")}"><b>${st === "Aguardando aprovação" ? "Aguardando a cliente aprovar" : st === "Aprovado" ? `A cliente aprovou${quando}` : `A cliente pediu ajuste${quando}`}</b>${com}</div>`;
+    const acts = `<div class="ap-act"><button type="button" class="btn primary" data-apok>${U.ic("check")}Aprovar</button><button type="button" class="btn ghost" data-apfix>${U.ic("lapis")}Pedir ajuste</button></div>
+      <div class="ap-form" data-apform hidden><label for="ap-com">O que você gostaria de mudar?</label><textarea id="ap-com" rows="3" data-apcom placeholder="Ex.: trocar a segunda foto, mudar a frase da legenda…">${st === "Ajuste solicitado" ? esc(p.aprovacao_comentario || "") : ""}</textarea><button type="button" class="btn primary sm" data-apsend>Enviar pedido de ajuste</button></div>`;
+    if (st === "Aguardando aprovação") return `<div class="ap-box ap-wait" data-ap="${p.id}"><b>Esse conteúdo está esperando a sua aprovação</b><p class="muted small">Confira a prévia e a legenda. Se estiver tudo certo, é só aprovar.</p>${acts}</div>`;
+    return `<div class="ap-box ${AP_CLS[st]}" data-ap="${p.id}"><b>${st === "Aprovado" ? `Você aprovou este conteúdo${quando}` : `Você pediu ajuste${quando}`}</b>${com}<button type="button" class="link-btn" data-apchange>Mudar resposta</button><div data-apacts hidden>${acts}</div></div>`;
+  }
+  const AP_CLS = { "Aguardando aprovação": "ap-wait", "Aprovado": "ap-ok", "Ajuste solicitado": "ap-fix" };
+  function viewPub(id, opts = {}) {
     const p = Store.data.publicacoes.find((x) => x.id === id); if (!p) return;
-    const vs = M.vsType(p, Store.data.publicacoes);
-    modal(`<div class="pubview">${p.imagem ? `<img src="${esc(p.imagem)}" alt="">` : ""}<div class="pv-b"><small class="muted">${esc(p.tipo)} · ${U.weekday(p.data)} ${U.dShort(p.data)}${p.horario ? " · " + esc(p.horario) : ""}</small><h2>${esc(p.titulo)}</h2>${ui().stBadge(p.status)}
-      ${ui().imName(p.imovel_id) ? `<p class="muted ic-line">${U.ic("casa")}${esc(ui().imName(p.imovel_id))}</p>` : ""}${p.legenda ? `<p class="legenda">${esc(p.legenda)}</p>` : ""}
-      ${M.hasResults(p) ? `<div class="pv-res"><div><b>${U.fmt(p.alcance)}</b><small>pessoas alcançadas</small></div><div><b>${U.fmt(p.curtidas)}</b><small>curtidas</small></div><div><b>${U.fmt(n(p.compartilhamentos) + n(p.salvamentos))}</b><small>salvaram ou compartilharam</small></div><div><b>${U.fmt(p.visitas_perfil)}</b><small>visitaram o perfil</small></div></div>${vs !== null ? `<p class="say sm">${vs >= 0 ? `Esse conteúdo foi visto por ${U.fmt(vs, 0)}% mais pessoas que a média dos ${esc(p.tipo)}. Olha esse resultado!` : `Esse conteúdo alcançou ${U.fmt(-vs, 0)}% menos pessoas que a média dos ${esc(p.tipo)}.`}</p>` : ""}` : `<p class="muted">Os resultados aparecem aqui depois da publicação.</p>`}
-      ${p.link ? `<a class="btn ghost sm" href="${esc(p.link)}" target="_blank" rel="noopener">Ver no Instagram ↗</a>` : ""}</div></div>`, { wide: true });
+    const vs = M.vsType(p, Store.data.publicacoes), admin = !!opts.admin;
+    const m = modal(`<div class="pubview">${window.APA.preview(p)}<div class="pv-b"><small class="muted">${esc(p.tipo || "")} · ${U.weekday(p.data)} ${U.dShort(p.data)}${p.horario ? " · " + esc(p.horario) : ""}</small><h2>${esc(p.titulo)}</h2><span class="pub-badges">${ui().stBadge(p.status)}</span>
+      ${ui().imName(p.imovel_id) ? `<p class="muted ic-line">${U.ic("casa")}${esc(ui().imName(p.imovel_id))}</p>` : ""}
+      ${apBlock(p, admin)}
+      ${M.hasResults(p) ? `<div class="pv-res"><div><b>${U.fmt(p.alcance)}</b><small>pessoas alcançadas</small></div><div><b>${U.fmt(p.curtidas)}</b><small>curtidas</small></div><div><b>${U.fmt(n(p.compartilhamentos) + n(p.salvamentos))}</b><small>salvaram ou compartilharam</small></div><div><b>${U.fmt(p.visitas_perfil)}</b><small>visitaram o perfil</small></div></div>${vs !== null ? `<p class="say sm">${vs >= 0 ? `Esse conteúdo foi visto por ${U.fmt(vs, 0)}% mais pessoas que a média dos ${esc(p.tipo)}. Olha esse resultado!` : `Esse conteúdo alcançou ${U.fmt(-vs, 0)}% menos pessoas que a média dos ${esc(p.tipo)}.`}</p>` : ""}` : p.status === "Publicado" ? `<p class="muted">Os resultados aparecem aqui depois da publicação.</p>` : ""}
+      <div class="pv-acts">${p.link ? `<a class="btn ghost sm" href="${esc(p.link)}" target="_blank" rel="noopener">Abrir link ↗</a>` : ""}${admin ? `<button type="button" class="btn primary sm" data-pvedit>${U.ic("lapis")}Editar conteúdo</button>` : ""}</div></div></div>`, { wide: true });
+    window.APA.bindPreview(m);
+    if (admin) { const b = U.$("[data-pvedit]", m); if (b) b.addEventListener("click", () => window.APA.edit("publicacoes", p)); return; }
+    const box = U.$("[data-ap]", m); if (!box) return;
+    const send = async (status, com) => {
+      U.$$("button", box).forEach((b) => (b.disabled = true));
+      try { await window.APA.API.aprovar(p.id, status, com); await Store.loadAll(); window.APP.render(); window.APA.toast(status === "Aprovado" ? "Conteúdo aprovado. Obrigada!" : "Pedido de ajuste enviado"); viewPub(p.id); }
+      catch (e) { window.APA.toast(e.message, "err"); U.$$("button", box).forEach((b) => (b.disabled = false)); }
+    };
+    box.addEventListener("click", (e) => {
+      const b = e.target.closest("button"); if (!b) return;
+      if (b.hasAttribute("data-apchange")) { b.hidden = true; U.$("[data-apacts]", box).hidden = false; }
+      if (b.hasAttribute("data-apok")) send("Aprovado");
+      if (b.hasAttribute("data-apfix")) { const f = U.$("[data-apform]", box); f.hidden = false; U.$("[data-apcom]", f).focus(); }
+      if (b.hasAttribute("data-apsend")) { const t = U.$("[data-apcom]", box).value.trim(); if (!t) { window.APA.toast("Conte o que você quer mudar.", "err"); return; } send("Ajuste solicitado", t); }
+    });
   }
   window.APA.viewPub = viewPub;
 
